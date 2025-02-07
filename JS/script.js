@@ -11,6 +11,6 @@ document.getElementById("play-button").addEventListener("click", function () {
     setTimeout(() => {
         loadingAnimation.classList.remove("active"); // Ascunde animația
         // Redirecționează la o altă pagină
-        window.location.href = "HomePage.html"; // Înlocuiește cu URL-ul dorit
+        window.location.href = "HTML/HomePage.html"; // Înlocuiește cu URL-ul dorit
     }, 5000); // Timpul în milisecunde (10000 ms = 10 secunde)
 });
