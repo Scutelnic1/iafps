@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #87CEEB; /* Cer albastru deschis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.teren {
+    width: 800px;
+    height: 500px;
+    background-color: #228B22; /* Culoare iarbă */
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(135deg, #7CFC00 25%, #006400 75%); /* Efect de iarbă */
+}
+
+.linii {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.linie-jos {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    top: 99%;
+    left: 0;
+}
+.linie-sus {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    top: 0%;
+    left: 0;
+}
+
+.linii-penalti {
+    position: absolute;
+    width: 150px;
+    height: 5px;
+    background-color: white;
+}
+
+
+.linii-penalti.stânga {
+    top: 25%;
+    left: 0;
+}
+
+.linii-penalti.dreapta {
+    top: 25%;
+    right: 0;
+}
+
+.linii-penalti.stânga1 {
+    top: 75%;
+    left: 0;
+}
+
+.linii-penalti.dreapta1 {
+    top: 75%;
+    right: 0;
+}
+
+.linie-centru {
+    position: absolute;
+    width: 5px;
+    height: 500px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.linie-centru1 {
+    position: absolute;
+    width: 5px;
+    height: 500px;
+    background-color: white;
+    top: 50%;
+    left: 0.1%;
+    transform: translate(-50%, -50%);
+}
+.linie-centru2 {
+    position: absolute;
+    width: 5px;
+    height: 500px;
+    background-color: white;
+    top: 50%;
+    left: 99.8%;
+    transform: translate(-50%, -50%);
+}
+
+.linie-centru3 {
+    position: absolute;
+    width: 5px;
+    height: 255px;
+    background-color: white;
+    top: 50.5%;
+    left: 19%;
+    transform: translate(-50%, -50%);
+}
+.linie-centru4 {
+    position: absolute;
+    width: 5px;
+    height: 255px;
+    background-color: white;
+    top: 50.5%;
+    left: 81%;
+    transform: translate(-50%, -50%);
+}
+
+.cerc-central {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 5px solid white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.porți {
+    position: relative;
+    top: 45%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.poartă {
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    background-color: #FFFFFF;
+    border: 3px solid #2F4F4F;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.poartă-stângă {
+    left: -5%;
+    transform: rotate(90deg);
+}
+
+.poartă-dreapta {
+    right: -5%;
+    transform: rotate(90deg);
+}
+
+.minge {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('/image/minge.png'); /* Înlocuiește cu calea corectă către imaginea ta */
+    background-size: cover; /* Ajustează imaginea să ocupe întregul spațiu al mingii */
+    background-position: center; /* Centrează imaginea */
+    border-radius: 50%; /* Păstrează forma rotundă */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: mingea 5s ease-in-out infinite;
+}
+
+@keyframes mingea {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -40%) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+

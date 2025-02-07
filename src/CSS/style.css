@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/image/background.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+h1 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Carter One", serif;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    font-size: 80px;
+    white-space: nowrap;
+}
+
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background-image: url(/image/snow.png);
+    background-size: cover;
+    animation: animationSnow 4s ease-in-out infinite;
+}
+
+@keyframes animationSnow {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(100px, 50vh);
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#play-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 10px 3px rgba(255, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+}
+
+#play-button .icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+#play-button:hover .icon {
+    transform: rotate(180deg); /* Rotește imaginea cu 360 de grade */
+  }
+
+#play-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+#play-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Stiluri pentru animația de loading */
+.loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    top: 40%;
+    display: none;
+}
+
+.loader span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+}
+
+.loader span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    
+    box-shadow: 0 0 20px red, 0 0 20px blue;
+    animation: animate 2s linear infinite;
+    animation: colorChange 4s linear infinite, animate 2s linear infinite;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes animate  {
+    0% {
+        transform: scale(1);
+       
+    }
+    80%, 100% {
+        transform: scale(0);
+        
+    }
+}
+
+
+@keyframes colorChange {
+    0%, 50% {
+        background-color: red; /* Roșu pentru primele 2 secunde */
+    }
+    50.01%, 100% {
+        background-color: blue; /* Albastru pentru următoarele 2 secunde */
+    }
+}
+
+
+
+/* Stil pentru animația de loading */
+#loading-animation {
+    position: fixed; /* Asigură-te că animația este poziționată în fața întregii pagini */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Valoare mare pentru a fi deasupra */
+    display: none; /* Ascuns inițial */
+}
+
+#loading-animation.active {
+    display: block; /* Devine vizibil când clasa active este adăugată */
+}
+
+
+
+
+
+@media screen and (max-width: 844px) and (orientation: landscape) {
+    h1 {
+        font-size: 40px; /* Reducere dimensiune font */
+    }
+
+    #play-button {
+        font-size: 14px; /* Buton mai mic */
+        padding: 8px 16px;
+    }
+
+    
+
+    .loader {
+        width: 80px; /* Loader mai mic */
+        height: 80px;
+    }
+
+    .loader span::before {
+        width: 10px;
+        height: 10px;
+    }
+}
+

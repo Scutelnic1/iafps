@@ -1,0 +1,247 @@
+/* -------------------------------
+   Stiluri generale pentru body
+---------------------------------- */
+body {
+    background: linear-gradient(45deg, #4146C4, #8D1236);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* -------------------------------
+     Container pentru elemente inline
+  ---------------------------------- */
+  .inline-container {
+    display: flex;
+    justify-content: center;  /* Centrează elementele pe orizontală */
+    align-items: flex-start;   /* Aliniază elementele în partea de sus (vertical) */
+    height: 90vh;
+  }
+  
+  /* -------------------------------
+     Stiluri pentru badge (stânga)
+  ---------------------------------- */
+  .badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #A0153E 0%, #3A0816 100%);
+    box-shadow: 1px 5px 15px #A0153E;
+    color: white;
+    border-radius: 13px 0 0 13px;
+    overflow: hidden;
+    width: 350px;
+    height: 120px;
+    position: relative;
+  }
+  
+  /* Secțiunea din badge */
+  .section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  /* -------------------------------
+     Stiluri pentru badge1 (dreapta)
+  ---------------------------------- */
+  .badge1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #24276E 0%, #454BD4 100%);
+    box-shadow: 1px 5px 15px #454BD4;
+    color: white;
+    border-radius: 0 13px 13px 0;
+    overflow: hidden;
+    width: 350px;
+    height: 120px;
+    position: relative;
+  }
+  
+  /* -------------------------------
+     Stiluri pentru ribbon
+  ---------------------------------- */
+  .ribbon {
+    background-color: #FFD700;
+    flex-direction: column;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    width: 150px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 1px 5px 15px #FFD700;
+    position: relative;
+  }
+  
+  .ribbon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  
+  /* Pseudoelementul pentru ribbon */
+  .ribbon:after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-top: 51px solid #FFD700;
+    filter: drop-shadow(1px 5px 15px #FFD700);
+  }
+  
+  
+  /* -------------------------------
+     Stiluri pentru sidebar (stânga)
+  ---------------------------------- */
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    bottom: 50px;
+    width: 200px;   /* Lățimea sidebar-ului */
+    height: 90vh;   /* Înălțimea sidebar-ului (90% din înălțimea viewport-ului) */
+    background-color: #A0153E;
+    box-shadow: 1px 5px 15px #A0153E;
+    border-radius: 30px;
+    display: flex;              /* Utilizare flexbox pentru aranjarea elementelor */
+    flex-direction: column;     /* Elemente dispuse vertical */
+    align-items: center;        /* Centrează cardurile orizontal */
+    padding: 10px;              /* Padding pentru spațiere */
+  }
+  
+  /* Conținutul adiacent sidebar-ului stâng */
+  .content {
+    margin-left: 50px;  /* Spațiu pentru a evita suprapunerea peste sidebar */
+  }
+  
+  /* -------------------------------
+     Stiluri pentru sidebar1 (dreapta)
+  ---------------------------------- */
+  .sidebar1 {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    bottom: 50px;
+    width: 200px;   /* Lățimea sidebar-ului */
+    height: 90vh;   /* Înălțimea sidebar-ului */
+    background-color: #24276E;
+    box-shadow: 1px 5px 15px #24276E;
+    border-radius: 30px;
+    display: flex;              /* Utilizare flexbox pentru aranjare */
+    flex-direction: column;     /* Elemente dispuse vertical */
+    align-items: center;        /* Centrează cardurile orizontal */
+    padding: 10px;              /* Padding pentru spațiere */
+  }
+  
+  /* Conținutul adiacent sidebar-ului drept */
+  .content1 {
+    margin-right: 50px;  /* Spațiu pentru a evita suprapunerea peste sidebar */
+  }
+  
+
+
+
+   /* -------------------------------
+     Media Queries pentru dispozitive mobile
+  ---------------------------------- */
+  
+  
+  @media screen and (max-width: 844px) and (orientation: landscape) {
+    body {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .inline-container {
+      display: flex;
+      justify-content: center;  /* Centrează elementele pe orizontală */
+      align-items: flex-start;   /* Aliniază elementele în partea de sus (vertical) */
+      height: 90vh;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #A0153E 0%, #3A0816 100%);
+      box-shadow: 1px 5px 15px #A0153E;
+      color: white;
+      border-radius: 13px 0 0 13px;
+      overflow: hidden;
+      width: 120px;
+      height: 50px;
+      position: relative;
+    }
+
+    .badge1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #24276E 0%, #454BD4 100%);
+      box-shadow: 1px 5px 15px #454BD4;
+      color: white;
+      border-radius: 0 13px 13px 0;
+      overflow: hidden;
+      width: 120px;
+      height: 50px;
+      position: relative;
+    }
+
+
+
+
+
+
+    
+  .section {
+    font-size: 10px;
+  }
+
+  .ribbon {
+    width: 50px;
+    height: 52px;
+    font-size: 12px;
+  }
+
+  .ribbon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .sidebar,
+  .sidebar1 {
+    width: 120px;
+    height: 80vh;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .content,
+  .content1 {
+    margin: 10px;
+  }
+  
+  .ribbon:after {
+    bottom: -15px; /* Ridică și mai sus pentru ecrane mici */
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 16px solid #FFD700;
+  }
+    
+  }
+  
